@@ -59,7 +59,7 @@ class App_queries_naturallanguage():
         """
 
         st.set_page_config(layout="wide",page_icon="🧊")
-        st.title("Lead Scoring Analyzer")
+        st.title("SQL Natural Language Interface")
 
 
         # Set up the layout with two columns
@@ -200,8 +200,17 @@ class App_queries_naturallanguage():
 if __name__ == "__main__":
 
     # Connection with the database
-    sql_engine = sql.create_engine("sqlite:///data/marketing.db")
+    # Get the absolute path of the project root (parent of src)
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# Path to the SQLite database
+    db_path = os.path.join(BASE_DIR, "data", "marketing.db")
+
+# Ensure 'data' folder exists (optional if already exists)
+    os.makedirs(os.path.dirname(db_path), exist_ok=True)
+
+# Create SQLAlchemy engine with absolute path
+    sql_engine = sql.create_engine(f"sqlite:///{db_path}", connect_args={"check_same_thread": False})
     API_KEY = API_KEY
 
     app_class = App_queries_naturallanguage(sql_engine=sql_engine, API_KEY=API_KEY)

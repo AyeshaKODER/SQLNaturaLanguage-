@@ -1,10 +1,12 @@
 import pandas as pd
 import sqlalchemy as sql
-from langchain.chat_models import ChatOpenAI
+# from langchain.chat_models import ChatOpenAI
+# from openrouter import OpenRouterChat
 from langchain.sql_database import SQLDatabase
 from langchain.chains import SQLDatabaseChain
 from utilities.config import *
-
+from langchain.chat_models import ChatOpenAI
+import openrouter
 
 
 class SQLNaturaLanguage():
@@ -39,7 +41,8 @@ class SQLNaturaLanguage():
         llm = ChatOpenAI(
             temperature=self.temperature,
             model=self.model,
-            openai_api_key=self.API_KEY
+            openai_api_key=self.API_KEY,
+            openai_api_base="https://openrouter.ai/api/v1"
         )
         return llm
 
