@@ -9,7 +9,7 @@ PROMPT = """
 
 
 QUESTION_GENERATIVE_AI = "How many clients do I have?"
-API_KEY = "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"
+API_KEY = "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"
 # API_KEY = os.environ['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']
 # KEY_OPENAI = "yourkey"
 

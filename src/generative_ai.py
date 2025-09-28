@@ -2,11 +2,12 @@ import pandas as pd
 import sqlalchemy as sql
 # from langchain.chat_models import ChatOpenAI
 # from openrouter import OpenRouterChat
+import openrouter
 from langchain.sql_database import SQLDatabase
 from langchain.chains import SQLDatabaseChain
 from utilities.config import *
 from langchain.chat_models import ChatOpenAI
-import openrouter
+
 
 
 class SQLNaturaLanguage():
