@@ -2,12 +2,12 @@ import pandas as pd
 import sqlalchemy as sql
 # from langchain.chat_models import ChatOpenAI
 # from openrouter import OpenRouterChat
-import openrouter
 from langchain.sql_database import SQLDatabase
-from langchain.chains import SQLDatabaseChain
+# from langchain.chains import SQLDatabaseChain
+from langchain_experimental.sql import SQLDatabaseChain
 from utilities.config import *
 from langchain.chat_models import ChatOpenAI
-
+import openrouter
 
 
 class SQLNaturaLanguage():
@@ -115,4 +115,3 @@ class SQLNaturaLanguage():
 # response = sqlnaturalanguage_object.execution(prompt="What are the best clients?")
 
 # print(response)
-
