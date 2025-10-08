@@ -10,7 +10,7 @@
 
 # QUESTION_GENERATIVE_AI = "How many clients do I have?"
 # API_KEY = "YOUR_KEY_HERE"
-# # API_KEY = os.environ['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']
+# # API_KEY = os.environ['yourkey']
 # # KEY_OPENAI = "yourkey"
 
 # # or you can use API_KEY = os.environ['OPENAI_API_KEY']
